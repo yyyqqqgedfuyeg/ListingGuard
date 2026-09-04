@@ -1,0 +1,64 @@
+# ==============================================================================
+# 淘宝 / 天猫平台商品信息发布合规规则库
+# 依据：《淘宝网禁发商品及信息名录及规则》、《淘宝平台争议处理规则》
+# ==============================================================================
+
+name: taobao_platform_policy
+version: "1.0"
+platform: taobao
+
+rules:
+  # 1. 好评返现与不正当诱导评价 (严重违规扣分项)
+  - id: TB-001
+    name: feedback_incentive_violation
+    category: feedback_manipulation
+    severity: BLOCK
+    description: 严禁在标题、主图详情或包裹卡片中出现好评返现、返红包等诱导评价词汇
+    patterns:
+      - "好评返现"
+      - "带图好评返"
+      - "好评返红包"
+      - "五星好评返"
+      - "好评截图返"
+      - "加微信返"
+      - "好评送红包"
+    cited_regulation: "《淘宝网市场管理与违规处理规范》关于不正当评价管理"
+    explanation: "淘宝平台严禁以任何形式诱导买家虚假评价或进行有偿好评，一经发现下架商品并限制发布权限。"
+    suggestion: "完全删除返现返利相关文案，改用正规店铺优惠券或合规会员积分形式"
+
+  # 2. 封建迷信与虚假转运宣传
+  - id: TB-002
+    name: superstition_claims
+    category: false_efficacy
+    severity: BLOCK
+    description: 严禁宣传开光辟邪、逆天改命、包生男孩等封建迷信内容
+    patterns:
+      - "大师开光"
+      - "包治百病"
+      - "招财转运"
+      - "辟邪保平安"
+      - "保生男孩"
+      - "斩断烂桃花"
+      - "还阴债"
+    cited_regulation: "《淘宝网禁发商品及信息名录》封建迷信类信息规则"
+    explanation: "利用迷信宣称不可证伪的神秘功效或心理暗示，属于平台明令禁止发布的虚假迷信商品信息。"
+    suggestion: "作为传统工艺品或民俗文创产品进行客观介绍，突出材质与工艺美感"
+
+  # 3. 禁限售商品与违规器材
+  - id: TB-003
+    name: restricted_equipment
+    category: prohibited_goods
+    severity: BLOCK
+    description: 严禁发布针孔摄像机、窃听器、军警用品、野味及野生动植物制品
+    patterns:
+      - "针孔摄像"
+      - "微型偷拍"
+      - "隐形监听"
+      - "警用装备"
+      - "军警特供"
+      - "象牙制品"
+      - "穿山甲甲片"
+      - "野生蛇肉"
+    cited_regulation: "《淘宝网禁发商品及信息名录》第一章与第四章"
+    explanation: "涉及侵犯隐私、管制器械及野生动植物保护法，平台实行一票否决封禁并移交司法机关。"
+    suggestion: "此类商品完全属于国家与平台禁售红线，不可发布"

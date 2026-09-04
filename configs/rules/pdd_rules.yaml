@@ -1,0 +1,61 @@
+# ==============================================================================
+# 拼多多平台商品发布合规规则库
+# 依据：《拼多多商品描述及质量抽检规范》、《拼多多虚假促销行为认定规则》
+# ==============================================================================
+
+name: pdd_platform_policy
+version: "1.0"
+platform: pdd
+
+rules:
+  # 1. 虚假促销与欺诈性噱头话术
+  - id: PDD-001
+    name: deceptive_promotion_claims
+    category: price_fraud
+    severity: BLOCK
+    description: 严禁发布0元免费领、假一赔万等无法履约或欺诈性质的噱头文案
+    patterns:
+      - "0元免费领"
+      - "不要钱白送"
+      - "假一赔万"
+      - "假一赔百"
+      - "全网底价不买后悔"
+      - "老板跑路清仓"
+      - "工厂倒闭清库"
+    cited_regulation: "《拼多多商品发布规范》关于虚假宣传与夸大承诺管理办法"
+    explanation: "使用夸大且不可信的虚假降价噱头误导消费者，易引发群体投诉与虚假交易处罚。"
+    suggestion: "替换为真实优惠力度，如“限时拼单特惠”、“工厂直营严选好物”"
+
+  # 2. 特供/专供国家机关幌子
+  - id: PDD-002
+    name: government_exclusive_claims
+    category: false_efficacy
+    severity: BLOCK
+    description: 严禁商品冠以特供、专供、军供等国家机关名义
+    patterns:
+      - "中南海特供"
+      - "国宴特供"
+      - "特供酒"
+      - "军供食品"
+      - "专供武警"
+      - "钓鱼台专供"
+    cited_regulation: "国家工商总局等五部委《关于严禁利用“特供”、“专供”等名义宣传的通知》"
+    explanation: "利用国家机关或军队名义进行商业炒作是国家明令查处并严厉打击的严重违法行为。"
+    suggestion: "禁止任何特供专供标识，突出原料产地优势与品质检验报告"
+
+  # 3. 普通滋补食品夸大为医疗特效
+  - id: PDD-003
+    name: tonic_food_exaggeration
+    category: false_efficacy
+    severity: REQUIRE_APPROVAL
+    description: 压片糖果、滋补膏方严禁夸大宣传壮阳、排毒、神效等非食品范畴
+    patterns:
+      - "强肾固本"
+      - "三天见效"
+      - "排毒养颜神效"
+      - "七天暴瘦"
+      - "不节食月瘦20斤"
+      - "消肚子神器"
+    cited_regulation: "《食品安全法》第七十一条：食品广告不得涉及疾病预防、治疗功能"
+    explanation: "普通食品或代用茶压片糖果宣传减脂排毒或生理机能神效，属于严重夸大欺诈消费。"
+    suggestion: "规范为“草本配方、清爽好滋味、日常膳食补充”"

@@ -1,0 +1,62 @@
+# ==============================================================================
+# eBay 跨境电商平台合规规则库 (Cross-Border Compliance)
+# 依据：eBay Prohibited and Restricted Items Policy & Verified Rights Owner (VeRO) Program
+# ==============================================================================
+
+name: ebay_crossborder_policy
+version: "1.0"
+platform: ebay
+
+rules:
+  # 1. VeRO 品牌知识产权侵权与关键词蹭热度 (Brand Keyword Stuffing & Counterfeit)
+  - id: EBAY-001
+    name: vero_brand_stuffing_violation
+    category: ip_infringement
+    severity: BLOCK
+    description: 严禁在标题或描述中使用大牌碰瓷、未授权高仿或品牌词滥用
+    patterns:
+      - "like Apple"
+      - "Apple style"
+      - "Rolex replica"
+      - "fake Nike"
+      - "Chanel inspired"
+      - "Gucci style"
+      - "copy Louis Vuitton"
+      - "1:1 replica"
+      - "unauthorized authentic"
+      - "OEM Apple"
+    cited_regulation: "eBay Verified Rights Owner (VeRO) Program & Trademark Misuse Policy"
+    explanation: "Listing items using third-party brand names they are not affiliated with or advertising replicas/fakes triggers immediate VeRO takedowns, account suspension, and possible legal liability."
+    suggestion: "Use 'Compatible with [Brand] [Model]' for accessories, or describe genuine features with your own registered trademark."
+
+  # 2. 受限高风险器材与武器部件 (Prohibited Lasers & Weapon Accessories)
+  - id: EBAY-002
+    name: restricted_lasers_and_weapons
+    category: prohibited_goods
+    severity: BLOCK
+    description: 严禁销售输出功率大于5mW的高功率激光笔、消音器及枪械改装配件
+    patterns:
+      - "high power laser 10000mw"
+      - "burning laser pointer"
+      - "suppressor adapter"
+      - "silencer thread"
+      - "switch auto sear"
+      - "military grade night vision"
+    cited_regulation: "eBay Firearms, Weapons, and Knives Policy & Laser Pointer Safety Standard (FDA 21 CFR)"
+    explanation: "Laser pointers over 5mW pose severe eye safety hazards; firearm silencers/conversion kits are illegal weapons under US federal and international laws."
+    suggestion: "Only sell certified presentation pointers <=5mW clearly stating FDA accession compliance."
+
+  # 3. 跨境合规认证缺失宣称 (Missing CE/FDA/FCC Compliance Declaration)
+  - id: EBAY-003
+    name: certification_misrepresentation
+    category: qualification_missing
+    severity: REQUIRE_APPROVAL
+    description: 电子与医疗个护产品进入欧美市场必须具有合法 CE / FCC / FDA 认证声明
+    patterns:
+      - "FDA approved medical"
+      - "cure COVID"
+      - "certified cure"
+      - "CE mark guaranteed"
+    cited_regulation: "eBay Medical Devices Policy & EU Product Safety General Regulation (GPSR)"
+    explanation: "Falsely claiming FDA medical approval without an official 510(k) or pre-market approval number violates FDA regulations and eBay medical listings policy."
+    suggestion: "Clarify non-medical wellness device status or provide valid 510(k) / CE certificate registration numbers."
