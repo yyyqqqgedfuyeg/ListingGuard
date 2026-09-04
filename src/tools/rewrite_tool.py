@@ -28,6 +28,7 @@ COMPLIANCE_SUBSTITUTIONS = {
     "100%纯天然": "精选植物萃取成分",
     "永久有效": "长效持久",
     "彻底清除": "深层净澈",
+    "彻底除斑": "温和淡化",
     # 医疗功效替换为普通护理/营养描述
     "消炎": "舒缓修护屏障",
     "降三高": "日常营养滋补",
@@ -37,8 +38,10 @@ COMPLIANCE_SUBSTITUTIONS = {
     "三天见效": "循序渐进呵护",
     "七天暴瘦": "健康轻盈体态",
     "不节食月瘦20斤": "均衡膳食好搭档",
+    "消肚子神器": "日常轻食伴侣",
     "强肾固本": "日常草本滋补",
     "排毒养颜神效": "轻盈舒畅好状态",
+    "神效": "贴心",
     # 价格欺诈与违规噱头
     "0元免费领": "限时拼单特惠",
     "不要钱白送": "超值拼购尝鲜",
@@ -50,10 +53,16 @@ COMPLIANCE_SUBSTITUTIONS = {
     "带图好评返": "",
     "好评返红包": "",
     "加微信返": "",
-    # 迷信宣称
+    # 迷信宣称与特供
     "大师开光": "传统非遗匠作",
     "辟邪保平安": "吉祥祈福雅意",
     "招财转运": "寓意吉祥如意",
+    "保生男孩": "寓意吉祥添福",
+    "斩断烂桃花": "雅致国风饰品",
+    "国宴特供": "匠心甄选品质",
+    "中南海特供": "传统传承工艺",
+    "特供酒": "陈酿优质佳品",
+    "军供食品": "高标准营养食品",
     # 跨境 VeRO 与受限
     "like Apple": "Compatible with Apple",
     "Apple style": "Minimalist Modern Aesthetic",
@@ -62,6 +71,7 @@ COMPLIANCE_SUBSTITUTIONS = {
     "Chanel inspired": "Elegant Quilted Motif",
     "1:1 replica": "Custom Precision Craftsmanship",
     "high power laser 10000mw": "Class 2 Presentation Pointer <= 5mW",
+    "High Power 10000mW": "Class 2 Presentation Pointer <= 5mW",
     "burning laser pointer": "Office Presentation Pointer",
 }
 
@@ -79,8 +89,10 @@ def _heuristic_rule_rewrite(title: str, description: str) -> Dict[str, str]:
     new_title = title
     new_desc = description
 
-    for bad_pat, safe_rep in COMPLIANCE_SUBSTITUTIONS.items():
-        # 正则不区分大小写安全替换
+    # 按模式词长度降序替换，优先匹配最长复合短语
+    sorted_keys = sorted(COMPLIANCE_SUBSTITUTIONS.keys(), key=lambda k: len(k), reverse=True)
+    for bad_pat in sorted_keys:
+        safe_rep = COMPLIANCE_SUBSTITUTIONS[bad_pat]
         pattern = re.compile(re.escape(bad_pat), re.IGNORECASE)
         new_title = pattern.sub(safe_rep, new_title)
         new_desc = pattern.sub(safe_rep, new_desc)

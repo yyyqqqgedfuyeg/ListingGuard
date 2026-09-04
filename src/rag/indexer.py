@@ -115,35 +115,28 @@ class RegulationIndexer:
         if not self.chunks:
             return
 
-        # 1. 灌装 Chroma
-        ids = [c.chunk_id for c in self.chunks]
-        documents = [f"{c.doc_name} {c.chapter} {c.article}\n{c.content}" for c in self.chunks]
-        metadatas = [
-            {
-                "chunk_id": c.chunk_id,
-                "doc_name": c.doc_name,
-                "platform": c.platform.value,
-                "article": c.article,
-                "chapter": c.chapter
-            }
-            for c in self.chunks
-        ]
-
-        # 如果集合已有数据先清理
+        # 1. 灌装 Chroma (若已有数据则直接复用，避免并发/多实例重删引发的找不到集合异常)
         existing_count = self.collection.count()
-        if existing_count > 0:
-            self.chroma_client.delete_collection(self.collection_name)
-            self.collection = self.chroma_client.create_collection(
-                name=self.collection_name,
-                embedding_function=self.embedding_fn,
-                metadata={"hnsw:space": "cosine"}
+        if existing_count == 0:
+            ids = [c.chunk_id for c in self.chunks]
+            documents = [f"{c.doc_name} {c.chapter} {c.article}\n{c.content}" for c in self.chunks]
+            metadatas = [
+                {
+                    "chunk_id": c.chunk_id,
+                    "doc_name": c.doc_name,
+                    "platform": c.platform.value,
+                    "article": c.article,
+                    "chapter": c.chapter
+                }
+                for c in self.chunks
+            ]
+            self.collection.add(
+                ids=ids,
+                documents=documents,
+                metadatas=metadatas
             )
-
-        self.collection.add(
-            ids=ids,
-            documents=documents,
-            metadatas=metadatas
-        )
+        else:
+            documents = [f"{c.doc_name} {c.chapter} {c.article}\n{c.content}" for c in self.chunks]
 
         # 2. 灌装 BM25
         self.tokenized_corpus = [self.tokenize(doc) for doc in documents]
