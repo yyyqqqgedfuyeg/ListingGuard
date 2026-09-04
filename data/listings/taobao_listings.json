@@ -1,0 +1,81 @@
+[
+  {
+    "listing_id": "TB-REAL-001",
+    "platform": "taobao",
+    "category": "美妆护肤",
+    "title": "全网第一美白淡斑精华液 100%纯天然 永久有效彻底除斑",
+    "description": "本店顶级爆款！采用独一无二的瑞士极品雪绒花萃取，全网最佳祛斑效果，3天见效消炎褪黑，买到就是赚到！好评返5元红包，带图好评返现10元！",
+    "price": 168.0,
+    "original_price": 999.0,
+    "attributes": {
+      "适用肤质": "任何肤质",
+      "功效": "顶级美白、永久去斑、消炎修护",
+      "核心成分": "100%纯天然植物精粹"
+    },
+    "images_text": ["全网销量第一", "带图好评加微信返现"],
+    "is_compliant_ground_truth": false,
+    "ground_truth_violations": [
+      {"pattern": "全网第一", "category": "absolute_claim", "severity": "BLOCK"},
+      {"pattern": "100%纯天然", "category": "absolute_claim", "severity": "REQUIRE_APPROVAL"},
+      {"pattern": "永久有效", "category": "absolute_claim", "severity": "REQUIRE_APPROVAL"},
+      {"pattern": "顶级", "category": "absolute_claim", "severity": "BLOCK"},
+      {"pattern": "消炎", "category": "false_efficacy", "severity": "BLOCK"},
+      {"pattern": "好评返现", "category": "feedback_manipulation", "severity": "BLOCK"},
+      {"pattern": "带图好评返", "category": "feedback_manipulation", "severity": "BLOCK"}
+    ]
+  },
+  {
+    "listing_id": "TB-REAL-002",
+    "platform": "taobao",
+    "category": "3C数码",
+    "title": "ANC主动降噪头戴式无线蓝牙耳机 长续航电竞低延迟音乐耳机",
+    "description": "采用40mm动圈发声单元，支持多模式深度降噪，蓝牙5.3稳定连接，单次充电综合续航约45小时，人体工学蛋白皮耳罩佩戴舒适，支持双设备智能切换。",
+    "price": 299.0,
+    "original_price": 359.0,
+    "attributes": {
+      "蓝牙版本": "5.3",
+      "续航时间": "45小时",
+      "发声单元": "40mm动圈"
+    },
+    "images_text": ["深度降噪", "舒适佩戴", "长效续航"],
+    "is_compliant_ground_truth": true,
+    "ground_truth_violations": []
+  },
+  {
+    "listing_id": "TB-REAL-003",
+    "platform": "taobao",
+    "category": "工艺饰品",
+    "title": "大师开光天然朱砂手串 辟邪保平安招财转运本命年红手绳男女款",
+    "description": "高僧大德亲临开光，注入充沛灵气，斩断烂桃花，辟邪保平安，招财转运神效立竿见影！",
+    "price": 88.0,
+    "original_price": 288.0,
+    "attributes": {
+      "材质": "高含量原矿朱砂",
+      "工艺": "手工编织"
+    },
+    "images_text": ["大师开光", "辟邪保平安"],
+    "is_compliant_ground_truth": false,
+    "ground_truth_violations": [
+      {"pattern": "大师开光", "category": "false_efficacy", "severity": "BLOCK"},
+      {"pattern": "招财转运", "category": "false_efficacy", "severity": "BLOCK"},
+      {"pattern": "辟邪保平安", "category": "false_efficacy", "severity": "BLOCK"}
+    ]
+  },
+  {
+    "listing_id": "TB-REAL-004",
+    "platform": "taobao",
+    "category": "服饰箱包",
+    "title": "重磅纯棉男女同款圆领短袖T恤 240g透气吸汗落肩情侣半袖",
+    "description": "采用精梳240g紧密赛络纺纯棉面料，布面细腻平整，微宽松落肩廓形设计，领口罗纹加固防变形，多色可选适合日常通勤休闲穿搭。",
+    "price": 69.0,
+    "original_price": 89.0,
+    "attributes": {
+      "材质成分": "100%棉",
+      "克重": "240g",
+      "领型": "经典圆领"
+    },
+    "images_text": ["优质精梳棉", "耐洗防变形"],
+    "is_compliant_ground_truth": true,
+    "ground_truth_violations": []
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "listing_id": "EBAY-REAL-001",
+    "platform": "ebay",
+    "category": "Consumer Electronics",
+    "title": "Military Grade Burning Laser Pointer High Power 10000mW Green Beam Tactical",
+    "description": "Powerful high power laser 10000mw with burning laser pointer capability, can easily burn matches and pop balloons instantly! Certified cure for outdoor survival.",
+    "price": 49.99,
+    "original_price": 99.99,
+    "attributes": {
+      "Wavelength": "532nm",
+      "Power Output": "10000mW",
+      "Battery": "18650 rechargeable"
+    },
+    "images_text": ["High Power Laser", "Burning Matches Output"],
+    "is_compliant_ground_truth": false,
+    "ground_truth_violations": [
+      {"pattern": "high power laser 10000mw", "category": "prohibited_goods", "severity": "BLOCK"},
+      {"pattern": "burning laser pointer", "category": "prohibited_goods", "severity": "BLOCK"}
+    ]
+  },
+  {
+    "listing_id": "EBAY-REAL-002",
+    "platform": "ebay",
+    "category": "Cell Phone Accessories",
+    "title": "Shockproof Liquid Silicone Case Compatible with iPhone 15 Pro Max 6.7 inch",
+    "description": "Precision engineered slim protective cover made from soft liquid silicone with microfiber lining, raised camera bezel protection, support MagSafe wireless charging, anti-fingerprint silky finish.",
+    "price": 12.99,
+    "original_price": 18.99,
+    "attributes": {
+      "Compatibility": "iPhone 15 Pro Max",
+      "Material": "Liquid Silicone + Microfiber",
+      "Wireless Charging": "Yes"
+    },
+    "images_text": ["Silky Touch", "Drop Protection 10ft"],
+    "is_compliant_ground_truth": true,
+    "ground_truth_violations": []
+  },
+  {
+    "listing_id": "EBAY-REAL-003",
+    "platform": "ebay",
+    "category": "Jewelry & Watches",
+    "title": "Men Luxury Watch like Apple Rolex replica automatic mechanical Gucci style",
+    "description": "Super luxury design 1:1 replica with automatic mechanical movement, Chanel inspired strap design, 100% water resistant luxury chronometer.",
+    "price": 65.0,
+    "original_price": 350.0,
+    "attributes": {
+      "Movement": "Automatic Mechanical",
+      "Case Material": "Stainless Steel"
+    },
+    "images_text": ["Luxury Watch", "Swiss Quality"],
+    "is_compliant_ground_truth": false,
+    "ground_truth_violations": [
+      {"pattern": "like Apple", "category": "ip_infringement", "severity": "BLOCK"},
+      {"pattern": "Rolex replica", "category": "ip_infringement", "severity": "BLOCK"},
+      {"pattern": "Gucci style", "category": "ip_infringement", "severity": "BLOCK"},
+      {"pattern": "1:1 replica", "category": "ip_infringement", "severity": "BLOCK"},
+      {"pattern": "Chanel inspired", "category": "ip_infringement", "severity": "BLOCK"}
+    ]
+  },
+  {
+    "listing_id": "EBAY-REAL-004",
+    "platform": "ebay",
+    "category": "Office Equipment",
+    "title": "Wireless Presentation Clicker with Red Laser Pointer <= 5mW Class 2 USB RF 2.4GHz",
+    "description": "Ergonomic handheld slide advancer with hyperlinked control, black screen, volume adjustment. Safe Class 2 red beam with maximum power output <= 5mW compliant with FDA 21 CFR guidelines, plug and play for Windows/Mac PowerPoint and Keynote.",
+    "price": 16.95,
+    "original_price": 24.99,
+    "attributes": {
+      "Laser Class": "Class 2 (<= 5mW)",
+      "Control Distance": "100 feet",
+      "Connection": "2.4GHz USB Dongle"
+    },
+    "images_text": ["FDA Compliant <= 5mW", "Class 2 Laser"],
+    "is_compliant_ground_truth": true,
+    "ground_truth_violations": []
+  }
+]

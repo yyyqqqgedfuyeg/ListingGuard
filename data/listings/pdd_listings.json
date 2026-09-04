@@ -1,0 +1,82 @@
+[
+  {
+    "listing_id": "PDD-REAL-001",
+    "platform": "pdd",
+    "category": "食品保健",
+    "title": "0元免费领 国宴特供古法熬制草本膏方 三天见效根治糖尿病降血糖",
+    "description": "原价999现价9.9元，工厂倒闭清库，老板跑路清仓！中南海特供品质，强肾固本降三高，每天一小勺彻底清除体质虚弱，三天见效！",
+    "price": 9.9,
+    "original_price": 999.0,
+    "attributes": {
+      "配料": "黑芝麻、黄精、桑葚、蜂蜜",
+      "保质期": "12个月"
+    },
+    "images_text": ["国宴特供", "降三高降血糖"],
+    "is_compliant_ground_truth": false,
+    "ground_truth_violations": [
+      {"pattern": "0元免费领", "category": "price_fraud", "severity": "BLOCK"},
+      {"pattern": "国宴特供", "category": "false_efficacy", "severity": "BLOCK"},
+      {"pattern": "中南海特供", "category": "false_efficacy", "severity": "BLOCK"},
+      {"pattern": "降三高", "category": "false_efficacy", "severity": "BLOCK"},
+      {"pattern": "降血糖", "category": "false_efficacy", "severity": "BLOCK"},
+      {"pattern": "根治", "category": "false_efficacy", "severity": "BLOCK"},
+      {"pattern": "原价", "category": "price_fraud", "severity": "REQUIRE_APPROVAL"},
+      {"pattern": "工厂倒闭清库", "category": "price_fraud", "severity": "BLOCK"}
+    ]
+  },
+  {
+    "listing_id": "PDD-REAL-002",
+    "platform": "pdd",
+    "category": "家居日用",
+    "title": "食品级加厚耐温硅胶保鲜盖6件套 适用各类碗盘微波炉冰箱冷藏密封",
+    "description": "精选食品接触用硅胶材质制作，耐温区间约-40℃至220℃，高弹性贴合碗盘边缘，倒置不漏水，可多次清洗重复使用，微波加热冰箱保鲜两相宜。",
+    "price": 12.9,
+    "original_price": 19.9,
+    "attributes": {
+      "材质": "食品接触用硅胶",
+      "规格": "6种尺寸套装",
+      "耐温范围": "-40℃ ~ 220℃"
+    },
+    "images_text": ["食品接触级", "高弹密封防漏"],
+    "is_compliant_ground_truth": true,
+    "ground_truth_violations": []
+  },
+  {
+    "listing_id": "PDD-REAL-003",
+    "platform": "pdd",
+    "category": "美妆个护",
+    "title": "七天暴瘦神效代餐奶昔粉 纯植物提取不节食月瘦20斤消肚子神器",
+    "description": "全网最火爆燃脂代餐粉！富含高膳食纤维，喝一杯饱腹5小时，七天暴瘦肉眼可见，强力排毒养颜神效，无任何副作用！",
+    "price": 39.9,
+    "original_price": 129.0,
+    "attributes": {
+      "产品类型": "固体饮料/代餐冲调",
+      "净含量": "400g"
+    },
+    "images_text": ["七天暴瘦", "月瘦20斤"],
+    "is_compliant_ground_truth": false,
+    "ground_truth_violations": [
+      {"pattern": "七天暴瘦", "category": "false_efficacy", "severity": "REQUIRE_APPROVAL"},
+      {"pattern": "不节食月瘦20斤", "category": "false_efficacy", "severity": "REQUIRE_APPROVAL"},
+      {"pattern": "排毒养颜神效", "category": "false_efficacy", "severity": "REQUIRE_APPROVAL"},
+      {"pattern": "最", "category": "absolute_claim", "severity": "BLOCK"}
+    ]
+  },
+  {
+    "listing_id": "PDD-REAL-004",
+    "platform": "pdd",
+    "category": "生鲜果蔬",
+    "title": "四川安岳黄柠檬新鲜现摘大果 5斤装单果约100g汁多皮薄泡水茶饮",
+    "description": "源自四川安岳阳光果园直发，人工套袋种植，果型饱满圆润，色泽鲜亮金黄，切片泡水酸甜爽口，维生素丰富，冷链或常温透气箱发货保障新鲜度。",
+    "price": 15.8,
+    "original_price": 22.0,
+    "attributes": {
+      "产地": "四川省资阳市安岳县",
+      "规格重量": "净重5斤装",
+      "贮藏方式": "阴凉通风或冷藏"
+    },
+    "images_text": ["果园现摘", "汁多皮薄"],
+    "is_compliant_ground_truth": true,
+    "ground_truth_violations": []
+  }
+]
