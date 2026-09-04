@@ -1,0 +1,152 @@
+[
+  {
+    "case_id": "CASE-TB-001",
+    "platform": "taobao",
+    "category": "美妆护肤",
+    "title": "全网第一美白面霜 100%纯天然 永久有效彻底除斑",
+    "description": "本店顶级爆款，消炎淡斑，好评返5元红包，带图好评返现10元！",
+    "expected_is_compliant": false,
+    "expected_categories": ["absolute_claim", "false_efficacy", "feedback_manipulation"],
+    "expected_max_severity": "BLOCK"
+  },
+  {
+    "case_id": "CASE-TB-002",
+    "platform": "taobao",
+    "category": "服饰箱包",
+    "title": "重磅纯棉男女同款圆领短袖T恤 240g透气吸汗落肩情侣半袖",
+    "description": "精梳纯棉面料，舒适透气，微宽松落肩版型，领口罗纹防变形。",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  },
+  {
+    "case_id": "CASE-TB-003",
+    "platform": "taobao",
+    "category": "工艺礼品",
+    "title": "大师开光朱砂手串 辟邪保平安招财转运本命年红绳",
+    "description": "名寺大师亲临开光，招财转运神效，辟邪保平安保生男孩。",
+    "expected_is_compliant": false,
+    "expected_categories": ["false_efficacy"],
+    "expected_max_severity": "BLOCK"
+  },
+  {
+    "case_id": "CASE-TB-004",
+    "platform": "taobao",
+    "category": "3C数码",
+    "title": "ANC主动降噪头戴式蓝牙耳机 长续航电竞低延迟音乐耳机",
+    "description": "40mm动圈单元，蓝牙5.3，单次续航45小时，双设备智能切换。",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  },
+  {
+    "case_id": "CASE-TB-005",
+    "platform": "taobao",
+    "category": "安防监控",
+    "title": "高清家用看护摄像头 360度全景夜视无线WiFi双向语音通话",
+    "description": "支持1080P高清画质，手机远程看家看店，红外夜视清晰不发红光。",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  },
+  {
+    "case_id": "CASE-PDD-001",
+    "platform": "pdd",
+    "category": "食品保健",
+    "title": "0元免费领 国宴特供古法熬制草本膏方 三天见效根治糖尿病降血糖",
+    "description": "原价999现价9.9元，工厂倒闭清库，中南海特供品质，降三高强肾固本。",
+    "expected_is_compliant": false,
+    "expected_categories": ["price_fraud", "false_efficacy"],
+    "expected_max_severity": "BLOCK"
+  },
+  {
+    "case_id": "CASE-PDD-002",
+    "platform": "pdd",
+    "category": "家居日用",
+    "title": "食品级加厚耐温硅胶保鲜盖6件套 适用各类碗盘微波炉密封",
+    "description": "食品接触用硅胶，耐温-40℃至220℃，高弹贴合防漏，可多次清洗重复使用。",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  },
+  {
+    "case_id": "CASE-PDD-003",
+    "platform": "pdd",
+    "category": "食品冲调",
+    "title": "七天暴瘦神效代餐奶昔粉 不节食月瘦20斤消肚子神器",
+    "description": "全网最火爆代餐粉，排毒养颜神效，七天暴瘦无副作用！",
+    "expected_is_compliant": false,
+    "expected_categories": ["false_efficacy", "absolute_claim"],
+    "expected_max_severity": "BLOCK"
+  },
+  {
+    "case_id": "CASE-PDD-004",
+    "platform": "pdd",
+    "category": "生鲜果蔬",
+    "title": "四川安岳黄柠檬新鲜现摘大果 净重5斤装单果约100g汁多皮薄",
+    "description": "阳光果园现摘直发，人工套袋，酸甜爽口维C丰富，泡水茶饮佳选。",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  },
+  {
+    "case_id": "CASE-PDD-005",
+    "platform": "pdd",
+    "category": "日用清洁",
+    "title": "多功能去污抑菌洗衣凝珠 浓缩配方强效洁净持久留香48颗装",
+    "description": "8倍洁净力浓缩配方，水溶性薄膜无残留，清新花果香调持久留香。",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  },
+  {
+    "case_id": "CASE-EBAY-001",
+    "platform": "ebay",
+    "category": "Consumer Electronics",
+    "title": "Military Grade Burning Laser Pointer High Power 10000mW Green Beam",
+    "description": "Burning laser pointer can light matches and burst balloons instantly outdoors.",
+    "expected_is_compliant": false,
+    "expected_categories": ["prohibited_goods"],
+    "expected_max_severity": "BLOCK"
+  },
+  {
+    "case_id": "CASE-EBAY-002",
+    "platform": "ebay",
+    "category": "Cell Phone Accessories",
+    "title": "Shockproof Liquid Silicone Case Compatible with iPhone 15 Pro Max",
+    "description": "Slim protective cover with microfiber lining, raised bezel, support wireless charging.",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  },
+  {
+    "case_id": "CASE-EBAY-003",
+    "platform": "ebay",
+    "category": "Watches",
+    "title": "Men Luxury Watch like Apple Rolex replica Gucci style automatic",
+    "description": "1:1 replica design with mechanical movement, Chanel inspired strap design.",
+    "expected_is_compliant": false,
+    "expected_categories": ["ip_infringement"],
+    "expected_max_severity": "BLOCK"
+  },
+  {
+    "case_id": "CASE-EBAY-004",
+    "platform": "ebay",
+    "category": "Office Products",
+    "title": "Wireless Presentation Clicker with Red Laser Pointer <= 5mW Class 2 USB",
+    "description": "Ergonomic presentation clicker, output power <= 5mW compliant with FDA 21 CFR.",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  },
+  {
+    "case_id": "CASE-EBAY-005",
+    "platform": "ebay",
+    "category": "Outdoor Gear",
+    "title": "Ultralight Camping Backpack 40L Waterproof Hiking Rucksack with Rain Cover",
+    "description": "Tear-resistant nylon fabric, ergonomic breathable shoulder straps, reflective safety strips.",
+    "expected_is_compliant": true,
+    "expected_categories": [],
+    "expected_max_severity": "WARNING"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "query_id": "RAG-Q01",
+    "query": "广告中使用国家级、最高级、最佳、全网第一等极限词罚款多少？",
+    "expected_platform": "general",
+    "target_doc": "china_advertising_law",
+    "target_article_keywords": ["第九条", "绝对化用语"]
+  },
+  {
+    "query_id": "RAG-Q02",
+    "query": "宣称100%纯天然、永久有效但无法自证属于什么广告违法？",
+    "expected_platform": "general",
+    "target_doc": "china_advertising_law",
+    "target_article_keywords": ["第二十八条", "虚假广告"]
+  },
+  {
+    "query_id": "RAG-Q03",
+    "query": "普通化妆品与食品宣称消炎、降血糖、根治疾病有什么后果？",
+    "expected_platform": "general",
+    "target_doc": "china_advertising_law",
+    "target_article_keywords": ["第十七条", "疾病治疗"]
+  },
+  {
+    "query_id": "RAG-Q04",
+    "query": "保健食品宣传能代替药物治疗疾病的禁止规定",
+    "expected_platform": "general",
+    "target_doc": "china_advertising_law",
+    "target_article_keywords": ["第十八条", "保健食品"]
+  },
+  {
+    "query_id": "RAG-Q05",
+    "query": "淘宝平台商品详情承诺好评返现、好评返红包如何处罚？",
+    "expected_platform": "taobao",
+    "target_doc": "taobao_rules",
+    "target_article_keywords": ["条款 1.1", "评价管理", "虚假评价"]
+  },
+  {
+    "query_id": "RAG-Q06",
+    "query": "淘宝禁止发布针孔摄像、隐形偷听偷拍设备规则",
+    "expected_platform": "taobao",
+    "target_doc": "taobao_rules",
+    "target_article_keywords": ["条款 2.1", "隐私", "管制器材"]
+  },
+  {
+    "query_id": "RAG-Q07",
+    "query": "淘宝销售大师开光转运神效等封建迷信信息管理办法",
+    "expected_platform": "taobao",
+    "target_doc": "taobao_rules",
+    "target_article_keywords": ["条款 2.2", "封建迷信"]
+  },
+  {
+    "query_id": "RAG-Q08",
+    "query": "拼多多商品宣传0元免费领、虚构原价999现价9.9元认定为价格欺诈",
+    "expected_platform": "pdd",
+    "target_doc": "pdd_rules",
+    "target_article_keywords": ["规则 1.1", "虚构原价", "虚假打折"]
+  },
+  {
+    "query_id": "RAG-Q09",
+    "query": "拼多多严禁利用中南海特供、国宴特供名义宣传管理通知",
+    "expected_platform": "pdd",
+    "target_doc": "pdd_rules",
+    "target_article_keywords": ["规则 1.2", "特供", "专供"]
+  },
+  {
+    "query_id": "RAG-Q10",
+    "query": "拼多多普通压片糖果代餐宣称七天暴瘦月瘦20斤违规判定",
+    "expected_platform": "pdd",
+    "target_doc": "pdd_rules",
+    "target_article_keywords": ["规则 2.1", "代用茶", "压片糖果", "虚假疗效"]
+  },
+  {
+    "query_id": "RAG-Q11",
+    "query": "eBay listings using like Apple Rolex replica trademark infringement VeRO policy",
+    "expected_platform": "ebay",
+    "target_doc": "ebay_vero_policy",
+    "target_article_keywords": ["Clause 1.1", "Trademark", "VeRO", "Keyword Spamming"]
+  },
+  {
+    "query_id": "RAG-Q12",
+    "query": "eBay safety standard on burning high power laser pointer output power limit 5mW",
+    "expected_platform": "ebay",
+    "target_doc": "ebay_vero_policy",
+    "target_article_keywords": ["Clause 2.1", "Laser", "5mW", "FDA 21 CFR"]
+  },
+  {
+    "query_id": "RAG-Q13",
+    "query": "eBay false FDA approved medical claim without 510k and EU GPSR CE certification",
+    "expected_platform": "ebay",
+    "target_doc": "ebay_vero_policy",
+    "target_article_keywords": ["Clause 3.1", "Medical Claims", "FDA Approved", "CE"]
+  },
+  {
+    "query_id": "RAG-Q14",
+    "query": "电子商务法关于不得以虚构交易、编造用户评价进行虚假商业宣传的规定",
+    "expected_platform": "general",
+    "target_doc": "china_ecommerce_law",
+    "target_article_keywords": ["第十七条", "真实", "虚构交易"]
+  },
+  {
+    "query_id": "RAG-Q15",
+    "query": "电商平台经营者对关系消费者生命健康的商品未尽审核义务的连带责任",
+    "expected_platform": "general",
+    "target_doc": "china_ecommerce_law",
+    "target_article_keywords": ["第三十八条", "连带责任", "安全保障"]
+  }
+]

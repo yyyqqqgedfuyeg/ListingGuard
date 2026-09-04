@@ -1,0 +1,221 @@
+{
+  "timestamp": "2026-09-04T21:43:52.130308",
+  "rag_evaluation": {
+    "total_queries": 15,
+    "hit_at_1": 0.9333,
+    "hit_at_3": 1.0,
+    "hit_at_5": 1.0,
+    "mrr": 0.9667,
+    "avg_latency_ms": 1.31,
+    "details": [
+      {
+        "query_id": "RAG-Q01",
+        "query": "广告中使用国家级、最高级、最佳、全网第一等极限词罚款多少？",
+        "hit_rank": 1,
+        "latency_ms": 2.0,
+        "top_article": "第九条 【广告绝对化用语及公共利益禁止情形】"
+      },
+      {
+        "query_id": "RAG-Q02",
+        "query": "宣称100%纯天然、永久有效但无法自证属于什么广告违法？",
+        "hit_rank": 1,
+        "latency_ms": 1.0,
+        "top_article": "第二十八条 【虚假广告认定标准】"
+      },
+      {
+        "query_id": "RAG-Q03",
+        "query": "普通化妆品与食品宣称消炎、降血糖、根治疾病有什么后果？",
+        "hit_rank": 1,
+        "latency_ms": 1.02,
+        "top_article": "第十七条 【非医疗商品不得宣传疾病治疗功效】"
+      },
+      {
+        "query_id": "RAG-Q04",
+        "query": "保健食品宣传能代替药物治疗疾病的禁止规定",
+        "hit_rank": 1,
+        "latency_ms": 1.14,
+        "top_article": "第十八条 【保健食品广告特别规制】"
+      },
+      {
+        "query_id": "RAG-Q05",
+        "query": "淘宝平台商品详情承诺好评返现、好评返红包如何处罚？",
+        "hit_rank": 1,
+        "latency_ms": 2.26,
+        "top_article": "条款 1.1 【不正当获取与虚假评价管理】"
+      },
+      {
+        "query_id": "RAG-Q06",
+        "query": "淘宝禁止发布针孔摄像、隐形偷听偷拍设备规则",
+        "hit_rank": 1,
+        "latency_ms": 1.02,
+        "top_article": "条款 2.1 【侵犯个人隐私与管制器材类】"
+      },
+      {
+        "query_id": "RAG-Q07",
+        "query": "淘宝销售大师开光转运神效等封建迷信信息管理办法",
+        "hit_rank": 1,
+        "latency_ms": 1.0,
+        "top_article": "条款 2.2 【封建迷信与虚假灵异宣传】"
+      },
+      {
+        "query_id": "RAG-Q08",
+        "query": "拼多多商品宣传0元免费领、虚构原价999现价9.9元认定为价格欺诈",
+        "hit_rank": 1,
+        "latency_ms": 2.02,
+        "top_article": "规则 1.1 【虚构原价与虚假打折认定】"
+      },
+      {
+        "query_id": "RAG-Q09",
+        "query": "拼多多严禁利用中南海特供、国宴特供名义宣传管理通知",
+        "hit_rank": 1,
+        "latency_ms": 0.98,
+        "top_article": "规则 1.2 【严禁使用国家机关特供、专供名义】"
+      },
+      {
+        "query_id": "RAG-Q10",
+        "query": "拼多多普通压片糖果代餐宣称七天暴瘦月瘦20斤违规判定",
+        "hit_rank": 1,
+        "latency_ms": 0.0,
+        "top_article": "规则 2.1 【普通代用茶、压片糖果虚假疗效判定】"
+      },
+      {
+        "query_id": "RAG-Q11",
+        "query": "eBay listings using like Apple Rolex replica trademark infringement VeRO policy",
+        "hit_rank": 1,
+        "latency_ms": 2.4,
+        "top_article": "Clause 1.1 Trademark Misuse and Brand Keyword Spamming"
+      },
+      {
+        "query_id": "RAG-Q12",
+        "query": "eBay safety standard on burning high power laser pointer output power limit 5mW",
+        "hit_rank": 2,
+        "latency_ms": 1.0,
+        "top_article": "第三条 【广告真实合法原则】"
+      },
+      {
+        "query_id": "RAG-Q13",
+        "query": "eBay false FDA approved medical claim without 510k and EU GPSR CE certification",
+        "hit_rank": 1,
+        "latency_ms": 1.22,
+        "top_article": "Clause 3.1 Medical Claims and Certification Misrepresentation"
+      },
+      {
+        "query_id": "RAG-Q14",
+        "query": "电子商务法关于不得以虚构交易、编造用户评价进行虚假商业宣传的规定",
+        "hit_rank": 1,
+        "latency_ms": 1.65,
+        "top_article": "第十七条 【全面真实准确披露信息】"
+      },
+      {
+        "query_id": "RAG-Q15",
+        "query": "电商平台经营者对关系消费者生命健康的商品未尽审核义务的连带责任",
+        "hit_rank": 1,
+        "latency_ms": 1.0,
+        "top_article": "第三十八条 【平台审核把关与人身财产安全责任】"
+      }
+    ]
+  },
+  "scanner_evaluation": {
+    "total_cases": 15,
+    "binary_compliance_accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "throughput_listings_per_sec": 214.7,
+    "category_breakdown": {
+      "feedback_manipulation": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "false_efficacy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      },
+      "absolute_claim": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "price_fraud": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "prohibited_goods": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "ip_infringement": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      }
+    }
+  },
+  "rewrite_evaluation": {
+    "total_evaluated_cases": 6,
+    "first_pass_compliance_rate": 1.0,
+    "closed_loop_final_compliance_rate": 1.0,
+    "average_iterations": 1.0,
+    "average_marketing_retention_score": 0.3483,
+    "details": [
+      {
+        "case_id": "CASE-TB-001",
+        "first_pass": true,
+        "closed_loop_pass": true,
+        "iterations": 1,
+        "retention_score": 0.3333,
+        "rewritten_title": "热销口碑优选美白面霜 精选植物萃取成分 长效持久温和淡化"
+      },
+      {
+        "case_id": "CASE-TB-003",
+        "first_pass": true,
+        "closed_loop_pass": true,
+        "iterations": 1,
+        "retention_score": 0.3793,
+        "rewritten_title": "传统非遗匠作朱砂手串 吉祥祈福雅意寓意吉祥如意本命年红绳"
+      },
+      {
+        "case_id": "CASE-PDD-001",
+        "first_pass": true,
+        "closed_loop_pass": true,
+        "iterations": 1,
+        "retention_score": 0.2453,
+        "rewritten_title": "限时拼单特惠 匠心甄选品质古法熬制草本膏方 循序渐进呵护温和调理养护糖尿病草本清新回甘"
+      },
+      {
+        "case_id": "CASE-PDD-003",
+        "first_pass": true,
+        "closed_loop_pass": true,
+        "iterations": 1,
+        "retention_score": 0.2432,
+        "rewritten_title": "健康轻盈体态贴心代餐奶昔粉 均衡膳食好搭档日常轻食伴侣"
+      },
+      {
+        "case_id": "CASE-EBAY-001",
+        "first_pass": true,
+        "closed_loop_pass": true,
+        "iterations": 1,
+        "retention_score": 0.5172,
+        "rewritten_title": "Military Grade Office Presentation Pointer Class 2 Presentation Pointer <= 5mW Green Beam"
+      },
+      {
+        "case_id": "CASE-EBAY-003",
+        "first_pass": true,
+        "closed_loop_pass": true,
+        "iterations": 1,
+        "retention_score": 0.3714,
+        "rewritten_title": "Men Luxury Watch Compatible with Apple Classic Mechanical Luxury Design Fashionable Stripe Pattern automatic"
+      }
+    ]
+  }
+}
