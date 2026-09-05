@@ -78,6 +78,7 @@ def load_agent_settings(env_file: Optional[str] = None) -> AgentSettings:
 
     max_retries_raw = os.getenv("LLM_MAX_RETRIES") or os.getenv("MAX_RETRIES")
     max_retries = int(max_retries_raw) if max_retries_raw and max_retries_raw.isdigit() else 3
+    streaming_env = os.getenv("LLM_STREAMING", "false").strip().lower() in ("true", "1", "yes")
 
     if not api_key or api_key == "your_deepseek_api_key_here":
         raise ValueError(
@@ -91,13 +92,13 @@ def load_agent_settings(env_file: Optional[str] = None) -> AgentSettings:
         temperature=temperature,
         max_tokens=max_tokens,
         max_retries=max_retries,
-        streaming=False,
+        streaming=streaming_env,
     )
 
 
 def get_llm(
     settings: Optional[AgentSettings] = None,
-    streaming: bool = False,
+    streaming: Optional[bool] = None,
     temperature: Optional[float] = None,
     max_retries: Optional[int] = None,
 ) -> ChatOpenAI:
@@ -105,7 +106,7 @@ def get_llm(
 
     Args:
         settings (Optional[AgentSettings], optional): 配置对象。若为 None 则自动从环境加载。
-        streaming (bool, optional): 是否开启流式传输。默认为 False。
+        streaming (Optional[bool], optional): 是否开启流式传输。默认为 None，优先读取 settings.streaming。
         temperature (Optional[float], optional): 覆盖默认温度。默认为 None。
         max_retries (Optional[int], optional): 覆盖默认最大重试次数。默认为 None。
 
@@ -115,6 +116,7 @@ def get_llm(
     if settings is None:
         settings = load_agent_settings()
 
+    is_streaming = streaming if streaming is not None else settings.streaming
     temp = temperature if temperature is not None else settings.temperature
     retries = max_retries if max_retries is not None else settings.max_retries
 
@@ -125,5 +127,5 @@ def get_llm(
         temperature=temp,
         max_tokens=settings.max_tokens,
         max_retries=retries,
-        streaming=streaming,
+        streaming=is_streaming,
     )
