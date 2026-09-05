@@ -1,116 +1,116 @@
 {
-  "timestamp": "2026-09-04T21:48:16.823232",
+  "timestamp": "2026-09-05T18:12:56.911691",
   "rag_evaluation": {
     "total_queries": 15,
     "hit_at_1": 0.9333,
     "hit_at_3": 1.0,
     "hit_at_5": 1.0,
     "mrr": 0.9667,
-    "avg_latency_ms": 1.29,
+    "avg_latency_ms": 3.68,
     "details": [
       {
         "query_id": "RAG-Q01",
         "query": "广告中使用国家级、最高级、最佳、全网第一等极限词罚款多少？",
         "hit_rank": 1,
-        "latency_ms": 2.06,
+        "latency_ms": 4.8,
         "top_article": "第九条 【广告绝对化用语及公共利益禁止情形】"
       },
       {
         "query_id": "RAG-Q02",
         "query": "宣称100%纯天然、永久有效但无法自证属于什么广告违法？",
         "hit_rank": 1,
-        "latency_ms": 1.03,
+        "latency_ms": 4.89,
         "top_article": "第二十八条 【虚假广告认定标准】"
       },
       {
         "query_id": "RAG-Q03",
         "query": "普通化妆品与食品宣称消炎、降血糖、根治疾病有什么后果？",
         "hit_rank": 1,
-        "latency_ms": 1.0,
+        "latency_ms": 3.09,
         "top_article": "第十七条 【非医疗商品不得宣传疾病治疗功效】"
       },
       {
         "query_id": "RAG-Q04",
         "query": "保健食品宣传能代替药物治疗疾病的禁止规定",
         "hit_rank": 1,
-        "latency_ms": 1.0,
+        "latency_ms": 3.91,
         "top_article": "第十八条 【保健食品广告特别规制】"
       },
       {
         "query_id": "RAG-Q05",
         "query": "淘宝平台商品详情承诺好评返现、好评返红包如何处罚？",
         "hit_rank": 1,
-        "latency_ms": 2.0,
+        "latency_ms": 4.0,
         "top_article": "条款 1.1 【不正当获取与虚假评价管理】"
       },
       {
         "query_id": "RAG-Q06",
         "query": "淘宝禁止发布针孔摄像、隐形偷听偷拍设备规则",
         "hit_rank": 1,
-        "latency_ms": 1.49,
+        "latency_ms": 3.0,
         "top_article": "条款 2.1 【侵犯个人隐私与管制器材类】"
       },
       {
         "query_id": "RAG-Q07",
         "query": "淘宝销售大师开光转运神效等封建迷信信息管理办法",
         "hit_rank": 1,
-        "latency_ms": 0.0,
+        "latency_ms": 4.01,
         "top_article": "条款 2.2 【封建迷信与虚假灵异宣传】"
       },
       {
         "query_id": "RAG-Q08",
         "query": "拼多多商品宣传0元免费领、虚构原价999现价9.9元认定为价格欺诈",
         "hit_rank": 1,
-        "latency_ms": 1.54,
+        "latency_ms": 4.1,
         "top_article": "规则 1.1 【虚构原价与虚假打折认定】"
       },
       {
         "query_id": "RAG-Q09",
         "query": "拼多多严禁利用中南海特供、国宴特供名义宣传管理通知",
         "hit_rank": 1,
-        "latency_ms": 1.57,
+        "latency_ms": 2.89,
         "top_article": "规则 1.2 【严禁使用国家机关特供、专供名义】"
       },
       {
         "query_id": "RAG-Q10",
         "query": "拼多多普通压片糖果代餐宣称七天暴瘦月瘦20斤违规判定",
         "hit_rank": 1,
-        "latency_ms": 1.03,
+        "latency_ms": 4.0,
         "top_article": "规则 2.1 【普通代用茶、压片糖果虚假疗效判定】"
       },
       {
         "query_id": "RAG-Q11",
         "query": "eBay listings using like Apple Rolex replica trademark infringement VeRO policy",
         "hit_rank": 1,
-        "latency_ms": 1.54,
-        "top_article": "Clause 1.1 Trademark Misuse and Brand Keyword Spamming"
+        "latency_ms": 4.01,
+        "top_article": "Guideline INT-EB-301 【Trademark Infringement Investigation & Takedown SOP】"
       },
       {
         "query_id": "RAG-Q12",
         "query": "eBay safety standard on burning high power laser pointer output power limit 5mW",
         "hit_rank": 2,
-        "latency_ms": 1.01,
-        "top_article": "第三条 【广告真实合法原则】"
+        "latency_ms": 4.0,
+        "top_article": "4.1 违规词库清单"
       },
       {
         "query_id": "RAG-Q13",
         "query": "eBay false FDA approved medical claim without 510k and EU GPSR CE certification",
         "hit_rank": 1,
-        "latency_ms": 1.0,
+        "latency_ms": 3.0,
         "top_article": "Clause 3.1 Medical Claims and Certification Misrepresentation"
       },
       {
         "query_id": "RAG-Q14",
         "query": "电子商务法关于不得以虚构交易、编造用户评价进行虚假商业宣传的规定",
         "hit_rank": 1,
-        "latency_ms": 1.0,
+        "latency_ms": 3.0,
         "top_article": "第十七条 【全面真实准确披露信息】"
       },
       {
         "query_id": "RAG-Q15",
         "query": "电商平台经营者对关系消费者生命健康的商品未尽审核义务的连带责任",
         "hit_rank": 1,
-        "latency_ms": 2.0,
+        "latency_ms": 2.52,
         "top_article": "第三十八条 【平台审核把关与人身财产安全责任】"
       }
     ]
@@ -121,7 +121,7 @@
     "macro_precision": 1.0,
     "macro_recall": 1.0,
     "macro_f1": 1.0,
-    "throughput_listings_per_sec": 212.2,
+    "throughput_listings_per_sec": 62.1,
     "category_breakdown": {
       "feedback_manipulation": {
         "precision": 1.0,
@@ -129,17 +129,17 @@
         "f1": 1.0,
         "support": 1
       },
-      "false_efficacy": {
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0,
-        "support": 4
-      },
       "absolute_claim": {
         "precision": 1.0,
         "recall": 1.0,
         "f1": 1.0,
         "support": 2
+      },
+      "false_efficacy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
       },
       "price_fraud": {
         "precision": 1.0,

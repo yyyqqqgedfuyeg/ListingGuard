@@ -16,21 +16,38 @@ class RegulationChunker:
     """条款感知文档切分器，将法律与平台规范 Markdown 准确拆解为条款级切片。"""
 
     @staticmethod
-    def infer_platform_from_filename(filename: str) -> Platform:
-        """根据规章文件名推断对应的电商平台。
+    def infer_scope_from_path(filepath: Path) -> str:
+        """根据规章路径推断其效力范畴 (internal / external / national)。
 
         Args:
-            filename (str): 文件名称。
+            filepath (Path): 文件路径。
+
+        Returns:
+            str: 规章范围。
+        """
+        path_str = str(filepath).lower().replace("\\", "/")
+        if "/internal/" in path_str or "internal" in filepath.name.lower():
+            return "internal"
+        if "/national/" in path_str or "national" in filepath.name.lower() or "advertising_law" in path_str or "ecommerce_law" in path_str:
+            return "national"
+        return "external"
+
+    @staticmethod
+    def infer_platform_from_filename(filepath: Path) -> Platform:
+        """根据规章文件路径或文件名推断对应的电商平台。
+
+        Args:
+            filepath (Path): 文件路径。
 
         Returns:
             Platform: 平台枚举。
         """
-        lower = filename.lower()
-        if "taobao" in lower:
+        path_str = str(filepath).lower().replace("\\", "/")
+        if "taobao" in path_str:
             return Platform.TAOBAO
-        elif "pdd" in lower:
+        elif "pdd" in path_str:
             return Platform.PDD
-        elif "ebay" in lower:
+        elif "ebay" in path_str:
             return Platform.EBAY
         return Platform.GENERAL
 
@@ -50,8 +67,8 @@ class RegulationChunker:
         with open(filepath, "r", encoding="utf-8") as f:
             content = f.read()
 
-        filename = filepath.name
-        platform = cls.infer_platform_from_filename(filename)
+        platform = cls.infer_platform_from_filename(filepath)
+        scope = cls.infer_scope_from_path(filepath)
 
         lines = content.splitlines()
         doc_title = filepath.stem
@@ -73,12 +90,14 @@ class RegulationChunker:
                             chunk_id=chunk_id,
                             doc_name=doc_title,
                             platform=platform,
+                            scope=scope,
                             chapter=current_chapter,
                             article=current_article,
                             content=body,
                             metadata={
                                 "source_file": str(filepath.name),
                                 "platform": platform.value,
+                                "scope": scope,
                                 "chapter": current_chapter,
                                 "article": current_article
                             }
@@ -113,7 +132,7 @@ class RegulationChunker:
 
     @classmethod
     def chunk_directory(cls, dir_path: Path) -> List[RegulationChunk]:
-        """批量切分指定目录下的所有 Markdown 合规法规文件。
+        """批量切分指定目录下的所有 Markdown 合规法规文件（支持多层子目录递归扫描）。
 
         Args:
             dir_path (Path): 规章文件目录。
@@ -122,7 +141,7 @@ class RegulationChunker:
             List[RegulationChunk]: 全量切片集合。
         """
         all_chunks: List[RegulationChunk] = []
-        for file in sorted(dir_path.glob("*.md")):
+        for file in sorted(dir_path.rglob("*.md")):
             file_chunks = cls.chunk_markdown_file(file)
             all_chunks.extend(file_chunks)
         return all_chunks

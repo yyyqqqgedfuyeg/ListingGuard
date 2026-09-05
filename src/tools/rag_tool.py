@@ -26,16 +26,24 @@ def get_regulation_retriever() -> RegulationRetriever:
 
 
 @tool
-def query_regulation(query: str, platform: Optional[str] = None, top_k: int = 3) -> List[Dict[str, Any]]:
-    """检索国家广告法、电子商务法及电商平台官方合规规则中的权威条款依据。
+def query_regulation(
+    query: str,
+    platform: Optional[str] = None,
+    scope: Optional[str] = None,
+    user_role: Optional[str] = None,
+    top_k: int = 3
+) -> List[Dict[str, Any]]:
+    """检索国家广告法、电子商务法及电商平台官方合规规则或内部机审手册中的权威条款依据。
 
     Args:
         query: 检索词或违规行为描述（例如：“广告法极限词最高级规定”、“淘宝好评返现处理细则”、“eBay VeRO侵权”）。
         platform: 限定电商平台，可选 'taobao'、'pdd'、'ebay' 或留空。
+        scope: 限定规章范畴，可选 'internal' (内部机审手册)、'external' (外部商家规则)、'national' (国家法律) 或留空。
+        user_role: 调用方角色，可选 'ADMIN'、'EMPLOYEE'、'CUSTOMER'。客户角色自动屏蔽内部机审手册。
         top_k: 最多返回的匹配条款数量，默认 3 条。
 
     Returns:
-        匹配法规条款的详细信息列表，包含法规名称、条款编号、正文片段及相关性得分。
+        匹配法规条款的详细信息列表，包含法规名称、条款编号、正文片段、范畴及相关性得分。
     """
     target_platform = None
     if platform:
@@ -45,5 +53,11 @@ def query_regulation(query: str, platform: Optional[str] = None, top_k: int = 3)
             target_platform = None
 
     retriever = get_regulation_retriever()
-    results = retriever.search(query=query, platform=target_platform, top_k=top_k)
+    results = retriever.search(
+        query=query,
+        platform=target_platform,
+        scope=scope,
+        user_role=user_role,
+        top_k=top_k
+    )
     return [r.to_citation_dict() for r in results]

@@ -25,6 +25,8 @@ class RegulationRetriever:
         self,
         query: str,
         platform: Optional[Platform] = None,
+        scope: Optional[str] = None,
+        user_role: Optional[str] = None,
         top_k: int = 3,
         rrf_k: int = 60
     ) -> List[RetrievalResult]:
@@ -32,7 +34,9 @@ class RegulationRetriever:
 
         Args:
             query (str): 检索自然语言查询词或违规描述。
-            platform (Optional[Platform], optional): 限定电商平台（会自动包含通用法律）。
+            platform (Optional[Platform], optional): 限定电商平台（会自动包含通用国家法律）。
+            scope (Optional[str], optional): 限定规章效力范畴 ('internal' / 'external' / 'national')。
+            user_role (Optional[str], optional): 当前调用方角色 ('ADMIN' / 'EMPLOYEE' / 'CUSTOMER')。
             top_k (int, optional): 返回的最相关条款数量。默认为 3。
             rrf_k (int, optional): RRF 平滑常数。默认为 60。
 
@@ -73,14 +77,23 @@ class RegulationRetriever:
         # 3. 收集所有候选 ID
         candidate_ids = set(dense_ranks.keys()).union(set(sparse_ranks.keys()))
 
-        # 4. RRF 评分融合与平台过滤
+        # 4. RRF 评分融合与权限/平台/范围过滤
         scored_results: List[RetrievalResult] = []
         for cid in candidate_ids:
             chunk = chunk_map.get(cid)
             if not chunk:
                 continue
 
-            # 平台过滤：若指定平台，只保留该平台专属规则或通用国家法律
+            # 权限隔离：客户 (CUSTOMER) 严禁访问平台内部机审手册 (internal)
+            if user_role and user_role.upper() == "CUSTOMER":
+                if chunk.scope == "internal":
+                    continue
+
+            # 范围过滤 (若显式指定 internal/external/national)
+            if scope and chunk.scope != scope:
+                continue
+
+            # 平台过滤：若指定平台，只保留该平台规则或国家通用法律
             if platform and platform != Platform.GENERAL:
                 if chunk.platform != platform and chunk.platform != Platform.GENERAL:
                     continue

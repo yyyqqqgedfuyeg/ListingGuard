@@ -57,7 +57,8 @@ class LocalHashEmbeddingFunction(EmbeddingFunction):
 class RegulationIndexer:
     """合规法规与平台规则索引构建与维护器。"""
 
-    DEFAULT_REGULATIONS_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "regulations"
+    _base_data = Path(__file__).resolve().parent.parent.parent / "data"
+    DEFAULT_REGULATIONS_DIR = _base_data / "rules" if (_base_data / "rules").exists() else _base_data / "regulations"
 
     def __init__(
         self,
@@ -125,6 +126,7 @@ class RegulationIndexer:
                     "chunk_id": c.chunk_id,
                     "doc_name": c.doc_name,
                     "platform": c.platform.value,
+                    "scope": c.scope,
                     "article": c.article,
                     "chapter": c.chapter
                 }

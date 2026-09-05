@@ -40,6 +40,7 @@ htmlcov/
 *.log
 *.sqlite
 *.sqlite3
+*.db
 *.pkl
 data/chroma_db/
 data/vector_store/

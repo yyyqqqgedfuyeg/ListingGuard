@@ -15,6 +15,7 @@ class RegulationChunk(BaseModel):
     chunk_id: str = Field(description="切片全局唯一标识")
     doc_name: str = Field(description="法规或官方规范文件名称")
     platform: Platform = Field(default=Platform.GENERAL, description="所属电商平台或通用法律")
+    scope: str = Field(default="external", description="规章效力范畴: internal (内部机审手册) / external (外部公开规范) / national (国家法律)")
     chapter: str = Field(default="", description="所属章节标题")
     article: str = Field(description="具体条款编号与条目标题，例如：'第九条 【广告绝对化用语】'")
     content: str = Field(description="条款全文正文内容")
@@ -29,6 +30,14 @@ class RetrievalResult(BaseModel):
     sparse_rank: Optional[int] = Field(default=None, description="BM25 关键词检索排名")
     retrieval_method: str = Field(default="hybrid_rrf", description="检索算法 (hybrid_rrf/dense/bm25)")
 
+    @property
+    def scope(self) -> str:
+        return self.chunk.scope
+
+    @property
+    def regulation_name(self) -> str:
+        return self.chunk.doc_name
+
     def to_citation_dict(self) -> Dict[str, Any]:
         """转化为诊断报告使用的精简法条引用字典。
 
@@ -36,10 +45,12 @@ class RetrievalResult(BaseModel):
             Dict[str, Any]: 包含条款号、法规名及核心正文引述的字典。
         """
         return {
+            "citation": f"{self.chunk.doc_name} {self.chunk.article}",
             "regulation": f"{self.chunk.doc_name} {self.chunk.article}",
             "doc_name": self.chunk.doc_name,
             "article": self.chunk.article,
             "platform": self.chunk.platform.value,
+            "scope": self.chunk.scope,
             "score": round(self.score, 4),
             "snippet": self.chunk.content[:200] + ("..." if len(self.chunk.content) > 200 else "")
         }
